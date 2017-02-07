@@ -24,7 +24,7 @@
 
 ## 运行项目
 ```
-  git clone https://github.com/lumia2046/cnode.git
+  git clone https://github.com/xuanshanbo/react_w.git
   cd cnode
   npm install webpack-dev-server webpack -g (没有安装webpack的需要安装)
   npm install
