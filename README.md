@@ -52,23 +52,6 @@
 - 增加react-router过渡动画
 - 优化页面性能
 
-## 总结
-
-- 对react组件及其生命周期有了更深入的了解
-  - 如果需要在组件更新的生命周期里setState()，应该在componentWillReceiveProps(或者componentWillUpdate)里通过对this.props和newProps里面的属性做出准确判断后再去setState()，否则会导致组件更新死循环以致页面卡死
-  - 在组件的生命周期里调用dispatch发送不带异步的action时，每发送一个action都会更新一次store。但是在事件回调的方法里多次调用dispatch发送不带异步的action时，只会在最后一个action发送完毕才更新一次store，想要每次action都更新store，那么必须手动将其封装为异步操作
-  - 公共组件最好不要设置自己的状态，应该由父组件管理其状态
-
-- 对es6有了更深入的了解
-  - 当采用es5写法时，React 自动将组件绑定给所有的事件回调方法中的this，这种自动绑定的行为只适用于当组件是用 React.createClass 创建时。如果用 ES6 的类来定义组件，那么事件方法中 this 的值就是 undefined，除非你自己显式绑定它
-  - 为了省略es6中事件方法的绑定，可以将事件方法写成箭头函数的形式，这种写法在react文档中标注为es7+，eg: 把handleClick(){}写成handleClick = () => {}即可,但是react生命周期函数不支es7+这种写法
-
-- 对React技术栈有了深入的了解
-  - react-router的history属性，当设置为browerHistory时，需要对服务器改造。否则用户直接向服务器请求某个子路由，会显示网页找不到的404错误。
-  - redux通过connect连接react组件，只有mapStateToProps里return的对象的属性发生改变，组件才会去更新。store中有的但是return的对象里不存在的属性改变时，组件不会去更新，因为这样没有意义
-
-- 使用了模块化编程后，页面整体逻辑变得清晰很多，每个模块里的css和js都只负责管理一个对应的组件。尤其是用了css这一块，用css-loader开启CSS-Modules后，就再也不用为类名的语义化和重复去烦恼
-
   联系Q294662037  分享群20481837
 
 

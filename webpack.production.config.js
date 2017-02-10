@@ -1,7 +1,3 @@
-// 如果不想单独配置该文件，可以在config.js里判断process.argv.indexOf('-p')，如果包含则加入相应插件
-// 同时要把module.exports里面的devServer里面的配置去掉，在package.json的script里进行配置
-// "start": "start http://localhost:3456/ & webpack-dev-server --devtool eval --progress --colors --hot --inline --port 3456 --history-api-fallback"
-// 如果取消本文件，且不删除config.js里devServer里面的配置，那么编译出来的文件不会被压缩
 
 var path = require('path');
 var webpack = require('webpack');
