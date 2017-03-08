@@ -23,8 +23,8 @@ class App extends Component {
       const loginName = masterInfo.loginName
       LoadingAction(accessToken,loginName)
     }else{
-      const accessToken = '1cbc2a58-6c1b-426f-971d-070676fb849d'
-      const loginName = 'lumia2046'
+      const accessToken = 'e6bdc61e-e6ec-4f75-b8ee-1d4b34309285'
+      const loginName = 'Mwangzhi'
       LoadingAction(accessToken,loginName)
     }
   }
