@@ -15,7 +15,7 @@ const PublishTopica = (location, cb) => {  //路由按需处理
 }     
 
 const routes = (
-    <Route path={`${prefix}/`} component={App}>
+    <Route path='/' component={App}>
         <IndexRoute component={HomePage}/>
         <Route path='topic/:id' component={Article}/>
         <Route path='message' component={Message}/>
