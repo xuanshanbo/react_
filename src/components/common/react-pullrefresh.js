@@ -19,65 +19,27 @@ class Pull extends Component {
   }
 
   componentDidMount() {
-    this.pullhelper = require('pullhelper')
 
     let { disabled,onRefresh,max } = this.props
     let maxPull = max || MAX_DEFAULT
     let that= this
 
-    this.pullhelper
-    .on('start',function(pulled) {
-      that.setState({
-        pulling:true
-      })
-    })
-    .on('stepback',function(pulled,next) {
-      that.setState({
-        pulled:pulled
-      })
-      let nextPulled = Math.min(pulled - Math.min(pulled/2,10),max)
-      next(nextPulled)
-    })
-    .on('step',function(pulled) {
-      that.setState({
-        pulled:pulled
-      })
-    })
-    .on('pull',function(pulled,next) {
-      that.setState({
-        pulling:false
-      })
-      if(!onRefresh || pulled < maxPull) {
-        next()
-        return
-      }
-      that.setState({
-        loading:true
-      })
-      onRefresh(_ => {
-        that.setState({
-          loading:false
-        })
-        next()
-      })
-    })
-    .load()
     if(disabled) {
-      this.pullhelper.pause()
+
     }
   }
   componentWillReceiveProps(nextProps) {
     let { disabled } = this.props
     if(disabled !== nextProps.disabled) {
       if(nextProps.disabled) {
-        this.pullhelper.pause()
+ 
       } else {
-        this.pullhelper.resume()
+
       }
     }
   }
   componentWillUnmount() {
-    this.pullhelper.unload()
+  
   }
   render() {
     let { pulling,loading,pulled } = this.state
