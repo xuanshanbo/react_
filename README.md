@@ -20,7 +20,7 @@
 - 通过`CSSModules`处理模块内部的类名
 
 ## 预览
-[DEMO](https://lumia2046.github.io/cnode/)
+[DEMO](https://xuanshanbo.github.io/react_w/build/production/index.html)
 
 ## 运行项目
 ```
